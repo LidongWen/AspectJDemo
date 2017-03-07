@@ -29,6 +29,7 @@ public class AspectJTest {
         Log.i(TAG, "aroundAspectJ(ProceedingJoinPoint joinPoint)");
         AspectJAnnotation aspectJAnnotation = methodSignature.getMethod().getAnnotation(AspectJAnnotation.class);
         String permission = aspectJAnnotation.value();
+        joinPoint.proceed();
          Log.i(TAG, "有权限："+permission);
         return "ds";
     }
