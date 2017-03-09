@@ -8,15 +8,18 @@ import org.aspectj.lang.annotation.Aspect;
 
 @Aspect
 public class MainActivity extends AppCompatActivity {
+    String TAG = "tag00";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        test();
+        Log.e(TAG, test());
     }
-    @AspectJAnnotation(value = "测试")
-    public void test(){
-        Log.i("tag00","检查权限");
+
+    @AspectJAnnotation(value = "权限A")
+    public String test() {
+        Log.i(TAG, "检查权限");
+        return "test";
     }
 }
